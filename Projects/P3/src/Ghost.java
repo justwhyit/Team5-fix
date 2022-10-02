@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Ghost {
   String myName;
@@ -16,7 +17,12 @@ public class Ghost {
   }
 
   public boolean move() {
-    return false;
+	  ArrayList<Location> locs = get_valid_moves();
+	  Random r = new Random();
+	  if (locs.size() == 0)
+		  return false;
+	  this.myLoc = locs.get(r.nextInt(locs.size()));
+	  return true;
   }
 
   public boolean is_pacman_in_range() {
