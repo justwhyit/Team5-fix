@@ -8,6 +8,6 @@ public class TestMapGetLoc extends TestCase {
 	  PacMan p = frame.addPacMan(new Location(2, 4));
 
 	  assert(f.getLoc(new Location(2, 4)) != null);
-	  assert(f.getLoc(new Location(2, 4)) == Map.Type.PACMAN);
+	  assert(f.getLoc(new Location(2, 4)).contains(Map.Type.PACMAN));
   }
 }
