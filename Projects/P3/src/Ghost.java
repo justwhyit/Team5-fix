@@ -26,6 +26,19 @@ public class Ghost {
   }
 
   public boolean is_pacman_in_range() {
+    ArrayList<Location> locs = new ArrayList<>();
+    locs.add(new Location(this.myLoc.x - 1, this.myLoc.y));
+    locs.add(new Location(this.myLoc.x + 1, this.myLoc.y));
+    locs.add(new Location(this.myLoc.x, this.myLoc.y - 1));
+    locs.add(new Location(this.myLoc.x, this.myLoc.y + 1));
+
+    for (int i = 0; i < locs.size(); i++) { 
+      if (myMap.getLoc(locs.get(i)) != null) {
+        if (myMap.getLoc(locs.get(i)).contains(Map.Type.PACMAN)) {
+          return true;
+        }
+      }
+    }
     return false;
   }
 
