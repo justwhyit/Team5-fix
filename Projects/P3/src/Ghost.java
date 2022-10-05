@@ -30,6 +30,6 @@ public class Ghost {
   }
 
   public boolean attack() {
-    return false;
+      return false;
   }
 }
