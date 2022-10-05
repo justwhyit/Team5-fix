@@ -65,7 +65,22 @@ public class Map {
 
   public boolean attack(String Name) {
     // update gameOver
-    return false;
+    boolean isAttacked = false;
+    Object[] key = field.keySet().toArray();
+
+    Location pacLocation = null;
+    for (int i = 0; i < key.length; i++) {
+      if (field.get(key[i]).contains(Type.PACMAN)) {
+        pacLocation = (Location)key[i];
+      }
+    }
+    Location ghostLoc = locations.get(Name);
+    if (ghostLoc != null) {
+      if (ghostLoc.shift(1, 0).equals(pacLocation) || ghostLoc.shift(0, -1).equals(pacLocation) || ghostLoc.shift(0, 1).equals(pacLocation) || ghostLoc.shift(-1, 0).equals(pacLocation)){
+        isAttacked = true;
+      }
+    }
+    return isAttacked;
   }
 
   public JComponent eatCookie(String name) {
