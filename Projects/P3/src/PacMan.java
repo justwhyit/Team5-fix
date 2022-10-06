@@ -14,7 +14,22 @@ public class PacMan {
   }
 
   public ArrayList<Location> get_valid_moves() {
-    return null;
+    Location[] locations = new Location[4];
+    ArrayList<Location> validMoves = new ArrayList<>();
+
+    locations[0] = myLoc.shift(0, 1); //upwards location
+    locations[1] = myLoc.shift(0, -1);  //downwards location
+    locations[2] = myLoc.shift(-1, 0);  //left location
+    locations[3] = myLoc.shift(1, 0);  //right location
+
+    for (Location location : locations) {
+      if ( !(myMap.getLoc(location).contains(Map.Type.WALL)
+      || myMap.getLoc(location).contains(Map.Type.GHOST)) ) {
+        validMoves.add(location);
+      }
+    }
+
+    return validMoves;
   }
 
   public boolean move() {
