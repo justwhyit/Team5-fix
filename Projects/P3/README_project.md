@@ -3,6 +3,12 @@ Members: Anthony Squillacioti, Josue Velasquez, Patrick Wang, Shrikar Vasisht
 
 ## Classes
 ### Pacman
+get_valid_moves()
+<ul>
+  <li>What it does: Returns an array of the spaces above, below, to the left, and to the right of Pacman that do not contain a ghost or wall.
+  <li>Test: Places Pacman and a ghost on the grid. Throws an exception if any of the valid locations returned by the method contains a wall.
+</ul>
+
 move()
 <ul>
   <li>What it does: Calls get_valid_moves(), picks the location at index 0 and sets Pacman's myLoc to that, then returns true. Returns false if no valid moves.</li>
@@ -15,6 +21,12 @@ is_ghost_in_range()
 </ul>
 
 ### Ghost
+get_valid_moves()
+<ul>
+  <li>What it does: Returns an array of the spaces above, below, to the left, and to the right of the ghost that do not contain a ghost or wall.
+  <li>Test: Places Pacman and a ghost on the grid. Throws an exception if any of the valid locations returned by the method contains a wall.
+</ul>
+
 move()
 <ul>
   <li>What it does: Calls get_valid_moves(), picks a random index and sets the ghost's myLoc to the loc at that index in the list, then returns true. Returns false if no valid moves.</li>
@@ -27,6 +39,12 @@ is_pacman_in_range()
 </ul>
 
 ### Map
+move(String name, Location loc, Type type)
+<ul>
+  <li>What it does: Moves an object of the given name and type to the new location. The method moves the object if doing so does not place a wall on any other object, or vice versa.
+  <li>Test: Places Pacman and a ghost on a grid. The test checks to make sure that Pacman and the ghost cannot be moved to a space containing a wall (or can be otherwise).
+<ul>
+
 getLoc()
 <ul>
   <li>What it does: Returns the HashSet of Types at the location passed into the method.</li>
