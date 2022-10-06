@@ -43,7 +43,7 @@ move(String name, Location loc, Type type)
 <ul>
   <li>What it does: Moves an object of the given name and type to the new location. The method moves the object if doing so does not place a wall on any other object, or vice versa.
   <li>Test: Places Pacman and a ghost on a grid. The test checks to make sure that Pacman and the ghost cannot be moved to a space containing a wall (or can be otherwise).
-<ul>
+</ul>
 
 getLoc()
 <ul>
