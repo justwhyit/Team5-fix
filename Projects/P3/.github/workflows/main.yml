@@ -11,4 +11,4 @@ jobs:
             - name: Test Pacman
               run:
                 echo Testing
-                javac ../../tests/*.java
+                javac ../../src/*.java
