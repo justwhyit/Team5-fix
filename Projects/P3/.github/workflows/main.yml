@@ -12,3 +12,6 @@ jobs:
               run:
                 echo Testing
                 javac ../../src/*.java
+                java ../../tests/TestPacManMove.java
+                java ../../tests/TestGhostMove.java
+                java ../../tests/TestMapGetLoc.java
