@@ -28,6 +28,7 @@ jobs:
           - uses: actions/checkout@v2
           - name: Compile and Run TestPacManValidMoves
             run: |
+              echo Testing
               javac ../../src/*.java
               java ../../tests/TestPacManValidMoves.java
 
@@ -38,6 +39,7 @@ jobs:
           - uses: actions/checkout@v2
           - name: Compile and Run TestGhostValidMoves
             run: |
+              echo Testing
               javac ../../src/*.java
               java ../../tests/TestGhostValidMoves.java
 
@@ -48,5 +50,6 @@ jobs:
           - uses: actions/checkout@v2
           - name: Compile and Run TestMapMove
             run: |
+              echo Testing
               javac ../../src/*.java
               java ../../tests/TestMapMove.java
