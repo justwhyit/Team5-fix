@@ -23,7 +23,7 @@ public class PacMan {
     locations[3] = myLoc.shift(1, 0);  //right location
 
     for (Location location : locations) {
-      if ( !(myMap.getLoc(location).contains(Map.Type.WALL)
+      if ( !(myMap.getLoc(location).contains(Map.Type.COOKIE)
       || myMap.getLoc(location).contains(Map.Type.GHOST)) ) {
         validMoves.add(location);
       }
