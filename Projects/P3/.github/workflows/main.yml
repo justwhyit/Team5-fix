@@ -12,7 +12,7 @@ jobs:
               run:
                 echo Testing
                 javac ../../src/*.java
-                
+
                 java ../../tests/TestConsume.java
                 java ../../tests/TestAttack.java
                 java ../../tests/TestMapEatCookie.java
@@ -20,4 +20,33 @@ jobs:
                 java ../../tests/TestPacManMove.java
                 java ../../tests/TestGhostMove.java
                 java ../../tests/TestMapGetLoc.java
+  
+  testPacManValidMoves:
+      runs-on: ubuntu-latest
+      container: openjdk
+      steps:
+          - uses: actions/checkout@v2
+          - name: Compile and Run TestPacManValidMoves
+            run: |
+              javac ../../src/*.java
+              java ../../tests/TestPacManValidMoves.java
 
+  testGhostValidMoves:
+      runs-on: ubuntu-latest
+      container: openjdk
+      steps:
+          - uses: actions/checkout@v2
+          - name: Compile and Run TestGhostValidMoves
+            run: |
+              javac ../../src/*.java
+              java ../../tests/TestGhostValidMoves.java
+
+  testMapMove:
+      runs-on: ubuntu-latest
+      container: openjdk
+      steps:
+          - uses: actions/checkout@v2
+          - name: Compile and Run TestMapMove
+            run: |
+              javac ../../src/*.java
+              java ../../tests/TestMapMove.java
