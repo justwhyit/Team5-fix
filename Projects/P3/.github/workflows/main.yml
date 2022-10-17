@@ -12,3 +12,6 @@ jobs:
               run:
                 echo Testing
                 javac ../../src/*.java
+                java ../../tests/TestConsume.java
+                java ../../tests/TestAttack.java
+                java ../../tests/TestMapEatCookie.java
