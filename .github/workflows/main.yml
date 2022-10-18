@@ -21,7 +21,7 @@ jobs:
             run: |
               echo Testing
               javac -cp Projects/P3/src/*.java
-              java -cp Projects/P3/tests/TestConsume.java
+              java -cp Projects/P3/tests/org.junit.runner.JUnitCore Projects/P3/tests/TestConsume.java
   testGhostAttack:
       runs-on: ubuntu-latest
       container: openjdk
