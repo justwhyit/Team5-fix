@@ -11,7 +11,7 @@ jobs:
             - name: Test Pacman
               run: |
                 echo Testing
-                javac -cp Projects/P3/src/*.java
+                javac -cp "Projects/P3/src" Projects/P3/src/*.java
   testPacManConsume:
       runs-on: ubuntu-latest
       container: openjdk
@@ -19,9 +19,9 @@ jobs:
           - uses: actions/checkout@v2
           - name: Compile and Run TestPacManConsume
             run: |
-              echo Testing
-              javac -cp Projects/P3/src/*.java
-              java -cp Projects/P3/tests/org.junit.runner.JUnitCore Projects/P3/tests/TestConsume
+              cd Projects/P3/
+              javac -cp "tests/*:src/:tests/" src/*.java tests/TestConsume.java
+              java -cp "tests/*:src/:tests/" org.junit.runner.JUnitCore TestConsume
   testGhostAttack:
       runs-on: ubuntu-latest
       container: openjdk
