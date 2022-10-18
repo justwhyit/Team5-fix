@@ -36,7 +36,7 @@ public class PacMan {
     ArrayList<Location> locs = get_valid_moves();
     if (locs.size() > 0) {
 	    this.myLoc = locs.get(0);
-	    return false;
+	    return true;
     }
     return false;
   }
