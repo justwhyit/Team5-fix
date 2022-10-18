@@ -20,8 +20,8 @@ jobs:
           - name: Compile and Run TestPacManConsume
             run: |
               cd Projects/P3/
-              javac -cp "tests/*:src/:tests/" src/*.java tests/TestConsume.java
-              java -cp "tests/*:src/:tests/" org.junit.runner.JUnitCore TestConsume
+              javac -cp -Djava.awt.headless=true "tests/*:src/:tests/" src/*.java tests/TestConsume.java
+              java -cp -Djava.awt.headless=true "tests/*:src/:tests/" org.junit.runner.JUnitCore TestConsume
   testGhostAttack:
       runs-on: ubuntu-latest
       container: openjdk
@@ -30,8 +30,8 @@ jobs:
           - name: Compile and Run TestGhostAttack
             run: |
               cd Projects/P3/
-              javac -cp "tests/*:src/:tests/" src/*.java tests/TestAttack.java
-              java -cp "tests/*:src/:tests/" org.junit.runner.JUnitCore TestAttack
+              javac -cp -Djava.awt.headless=true "tests/*:src/:tests/" src/*.java tests/TestAttack.java
+              java -cp -Djava.awt.headless=true "tests/*:src/:tests/" org.junit.runner.JUnitCore TestAttack
   testMapEatCookie:
       runs-on: ubuntu-latest
       container: openjdk
@@ -41,7 +41,7 @@ jobs:
             run: |
               cd Projects/P3/
               javac -cp "tests/*:src/:tests/" src/*.java tests/TestMapEatCookie.java
-              java -cp "tests/*:src/:tests/" org.junit.runner.JUnitCore TestMapEatCookie
+              java -cp -Djava.awt.headless=true "tests/*:src/:tests/" org.junit.runner.JUnitCore TestMapEatCookie
   testPacManMove:
       runs-on: ubuntu-latest
       container: openjdk
@@ -50,8 +50,8 @@ jobs:
           - name: Compile and Run TestPacManMove
             run: |
               cd Projects/P3/
-              javac -cp "tests/*:src/:tests/" src/*.java tests/TestPacManMove.java
-              java -cp "tests/*:src/:tests/" org.junit.runner.JUnitCore TestPacManMove
+              javac -cp -Djava.awt.headless=true "tests/*:src/:tests/" src/*.java tests/TestPacManMove.java
+              java -cp -Djava.awt.headless=true "tests/*:src/:tests/" org.junit.runner.JUnitCore TestPacManMove
   testGhostMove:
       runs-on: ubuntu-latest
       container: openjdk
@@ -60,8 +60,8 @@ jobs:
           - name: Compile and Run TestGhostMove
             run: |
               cd Projects/P3/
-              javac -cp "tests/*:src/:tests/" src/*.java tests/TestGhostMove.java
-              java -cp "tests/*:src/:tests/" org.junit.runner.JUnitCore TestGhostMove
+              javac -cp -Djava.awt.headless=true "tests/*:src/:tests/" src/*.java tests/TestGhostMove.java
+              java -cp -Djava.awt.headless=true "tests/*:src/:tests/" org.junit.runner.JUnitCore TestGhostMove
   testMapGetLoc:
       runs-on: ubuntu-latest
       container: openjdk
@@ -70,8 +70,8 @@ jobs:
           - name: Compile and Run TestMapGetLoc
             run: |
               cd Projects/P3/
-              javac -cp "tests/*:src/:tests/" src/*.java tests/TestMapGetLoc.java                             
-              java -cp "tests/*:src/:tests/" org.junit.runner.JUnitCore TestMapGetLoc
+              javac -cp -Djava.awt.headless=true "tests/*:src/:tests/" src/*.java tests/TestMapGetLoc.java                             
+              java -cp -Djava.awt.headless=true "tests/*:src/:tests/" org.junit.runner.JUnitCore TestMapGetLoc
   
   testPacManValidMoves:
       runs-on: ubuntu-latest
@@ -81,8 +81,8 @@ jobs:
           - name: Compile and Run TestPacManValidMoves
             run: |
               cd Projects/P3/
-              javac -cp "tests/*:src/:tests/" src/*.java tests/TestPacManValidMoves.java
-              java -cp "tests/*:src/:tests/" org.junit.runner.JUnitCore TestPacManValidMoves
+              javac -cp -Djava.awt.headless=true "tests/*:src/:tests/" src/*.java tests/TestPacManValidMoves.java
+              java -cp -Djava.awt.headless=true "tests/*:src/:tests/" org.junit.runner.JUnitCore TestPacManValidMoves
   testGhostValidMoves:
       runs-on: ubuntu-latest
       container: openjdk
@@ -91,8 +91,8 @@ jobs:
           - name: Compile and Run TestGhostValidMoves
             run: |
               cd Projects/P3/
-              javac -cp "tests/*:src/:tests/" src/*.java tests/TestGhostValidMoves.java
-              java -cp "tests/*:src/:tests/" org.junit.runner.JUnitCore TestGhostValidMoves
+              javac -cp -Djava.awt.headless=true "tests/*:src/:tests/" src/*.java tests/TestGhostValidMoves.java
+              java -cp -Djava.awt.headless=true "tests/*:src/:tests/" org.junit.runner.JUnitCore TestGhostValidMoves
   testMapMove:
       runs-on: ubuntu-latest
       container: openjdk
@@ -101,5 +101,5 @@ jobs:
           - name: Compile and Run TestMapMove
             run: |
               cd Projects/P3/
-              javac -cp "tests/*:src/:tests/" src/*.java tests/TestMapMove.java
-              java -cp "tests/*:src/:tests/" org.junit.runner.JUnitCore TestMapMove
+              javac -cp -Djava.awt.headless=true "tests/*:src/:tests/" src/*.java tests/TestMapMove.java
+              java -cp -Djava.awt.headless=true "tests/*:src/:tests/" org.junit.runner.JUnitCore TestMapMove
