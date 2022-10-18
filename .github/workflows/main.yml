@@ -1,0 +1,53 @@
+name: CI
+
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  build:
+      runs-on: ubuntu-latest
+      container: openjdk
+      steps:
+            - uses: actions/checkout@v2
+            - name: Test Pacman
+              run: |
+                echo Testing
+                javac -cp ../../src/*.java
+
+                java -cp ../../tests/TestConsume.java
+                java -cp ../../tests/TestAttack.java
+                java -cp ../../tests/TestMapEatCookie.java
+                
+                java -cp ../../tests/TestPacManMove.java
+                java -cp ../../tests/TestGhostMove.java
+                java -cp ../../tests/TestMapGetLoc.java
+  
+  testPacManValidMoves:
+      runs-on: ubuntu-latest
+      container: openjdk
+      steps:
+          - uses: actions/checkout@v2
+          - name: Compile and Run TestPacManValidMoves
+            run: |
+              echo Testing
+              javac -cp ../../src/*.java
+              java -cp ../../tests/TestPacManValidMoves.java
+  testGhostValidMoves:
+      runs-on: ubuntu-latest
+      container: openjdk
+      steps:
+          - uses: actions/checkout@v2
+          - name: Compile and Run TestGhostValidMoves
+            run: |
+              echo Testing
+              javac -cp ../../src/*.java
+              java -cp ../../tests/TestGhostValidMoves.java
+  testMapMove:
+      runs-on: ubuntu-latest
+      container: openjdk
+      steps:
+          - uses: actions/checkout@v2
+          - name: Compile and Run TestMapMove
+            run: |
+              echo Testing
+              javac -cp ../../src/*.java
+              java -cp ../../tests/TestMapMove.java
