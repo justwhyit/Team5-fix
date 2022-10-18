@@ -58,24 +58,25 @@ public class Map {
 
     if (type == Type.WALL) {
       if (!getLoc(loc).contains(Type.EMPTY)) {
-        return false;
-      } else {
         component.setLocation(loc.x, loc.y);
         return true;
+      } else {
+        return false;
       }
     } else {
       if (getLoc(loc).contains(Type.WALL)) {
-        return false;
-      } else {
         component.setLocation(loc.x, loc.y);
         return true;
+      } else {
+        return false;
       }
     }
   }
 
   public HashSet<Type> getLoc(Location loc) {
     if (field.containsKey(loc))
-	    return field.get(loc);
+	    return null;
+	    //return field.get(loc);
     return null;
   }
 
@@ -102,6 +103,7 @@ public class Map {
   public JComponent eatCookie(String name) {
     // update locations, components, field, and cookies
     // the id for a cookie at (10, 1) is tok_x10_y1
+    return null;
     // if name doesnt exist do nothing
     if(!locations.containsKey(name)){
         return null;

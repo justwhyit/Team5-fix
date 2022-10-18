@@ -22,7 +22,7 @@ public class Ghost {
     locations[3] = myLoc.shift(1, 0);  //right location
 
     for (Location location : locations) {
-      if (!myMap.getLoc(location).contains(Map.Type.WALL)) {
+      if (!myMap.getLoc(location).contains(Map.Type.COOKIE)) {
         validMoves.add(location);
       }
     }
@@ -36,7 +36,7 @@ public class Ghost {
 	  if (locs.size() == 0)
 		  return false;
 	  this.myLoc = locs.get(r.nextInt(locs.size()));
-	  return true;
+	  return false;
   }
 
   public boolean is_pacman_in_range() {
@@ -57,9 +57,12 @@ public class Ghost {
   }
 
   public boolean attack() {
+    return false;
+    /* 
     if(!is_pacman_in_range()){
       return false;
     }
   return true;
+  */
   }
 }
