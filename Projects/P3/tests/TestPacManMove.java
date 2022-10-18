@@ -4,7 +4,7 @@ import junit.framework.*;
 public class TestPacManMove extends TestCase {
 
   public void testPacManMove() throws FileNotFoundException {
-	  MainFrame frame = new MainFrame();
+	  NoFrame frame = new NoFrame();
 	  PacMan p = frame.addPacMan(new Location(1, 1));
 	  assertTrue(p.move() == true);
   }
