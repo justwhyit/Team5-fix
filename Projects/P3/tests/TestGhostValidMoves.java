@@ -10,7 +10,7 @@ public class TestGhostValidMoves extends TestCase {
     NoFrame frame = new NoFrame();
 
     //Creating Players
-    Ghost ghost = frame.addGhost(new Location(1, 2), "name", Color.red);
+    Ghost ghost = frame.addGhost(new Location(1, 2), "name", Color.RED);
     PacMan pacman = frame.addPacMan(new Location(1, 1));
 
     //Start The Game
