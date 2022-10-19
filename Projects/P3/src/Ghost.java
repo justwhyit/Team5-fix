@@ -22,7 +22,7 @@ public class Ghost {
     locations[3] = myLoc.shift(1, 0);  //right location
 
     for (Location location : locations) {
-      if (!myMap.getLoc(location).contains(Map.Type.COOKIE)) {
+      if (!myMap.getLoc(location).contains(Map.Type.WALL)) { //ghosts should be able to move on all spaces besides walls
         validMoves.add(location);
       }
     }

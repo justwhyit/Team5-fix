@@ -56,15 +56,16 @@ public class Map {
     // use the setLocation method for the component to move it to the new location
     JComponent component = components.get(name);
 
-    if (type == Type.WALL) {
-      if (!getLoc(loc).contains(Type.EMPTY)) {
+    //should only be ever adjusting position for pacman and ghost so... 
+    if (type == Type.PACMAN) {
+      if (!getLoc(loc).contains(Type.WALL)) { //can't update at all
         component.setLocation(loc.x, loc.y);
         return true;
       } else {
         return false;
       }
-    } else {
-      if (getLoc(loc).contains(Type.WALL)) {
+    } else { //must be ghost?
+      if (!getLoc(loc).contains(Type.WALL)) { //can't set at wall
         component.setLocation(loc.x, loc.y);
         return true;
       } else {

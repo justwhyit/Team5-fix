@@ -23,8 +23,9 @@ public class PacMan {
     locations[3] = myLoc.shift(1, 0);  //right location
 
     for (Location location : locations) {
-      if ( !(myMap.getLoc(location).contains(Map.Type.COOKIE)
-      || myMap.getLoc(location).contains(Map.Type.GHOST)) ) {
+      if ( !(myMap.getLoc(location).contains(Map.Type.WALL) //if it doesn't contain wall
+      && (myMap.getLoc(location).contains(Map.Type.COOKIE) || myMap.getLoc(location).contains(Map.Type.EMPTY)
+      || myMap.getLoc(location).contains(Map.Type.GHOST))) ) { //if location doesn't have wall, and has either ghost cookie or empty, valid
         validMoves.add(location);
       }
     }
@@ -59,11 +60,13 @@ public class PacMan {
   }
 
   public JComponent consume() {
-    return null;
-    /* 
-    if(myMap.getLoc(myLoc).contains(PACMAN) && myMap.getLoc(myLoc).contains(COOKIE)){
+    //return null;
+     
+    if(myMap.getLoc(myLoc).contains(Map.Type.PACMAN) && myMap.getLoc(myLoc).contains(Map.Type.COOKIE)){
         return myMap.eatCookie("pacman");
+    }else{
+      return null;
     }
-    */
+    
   }
 }
