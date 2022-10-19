@@ -36,7 +36,7 @@ public class Ghost {
 	  if (locs.size() == 0)
 		  return false;
 	  this.myLoc = locs.get(r.nextInt(locs.size()));
-	  return false;
+	  return true;
   }
 
   public boolean is_pacman_in_range() {
