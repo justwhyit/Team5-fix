@@ -22,7 +22,7 @@ public class Ghost {
     locations[3] = myLoc.shift(1, 0);  //right location
 
     for (Location location : locations) {
-      if (!myMap.getLoc(location).contains(Map.Type.COOKIE)) {
+      if (!myMap.getLoc(location).contains(Map.Type.WALL)) { //ghosts should be able to move on all spaces besides walls
         validMoves.add(location);
       }
     }
@@ -36,7 +36,7 @@ public class Ghost {
 	  if (locs.size() == 0)
 		  return false;
 	  this.myLoc = locs.get(r.nextInt(locs.size()));
-	  return false;
+	  return true;
   }
 
   public boolean is_pacman_in_range() {
@@ -57,12 +57,9 @@ public class Ghost {
   }
 
   public boolean attack() {
-    return false;
-    /* 
-    if(!is_pacman_in_range()){
+    if(!is_pacman_in_range()) {
       return false;
     }
-  return true;
-  */
+    return true;
   }
 }

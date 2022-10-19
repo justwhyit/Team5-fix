@@ -4,10 +4,10 @@ import junit.framework.*;
 public class TestMapGetLoc extends TestCase {
 
   public void testMapGetLoc() throws FileNotFoundException {
-	  MainFrame f = new MainFrame();
-	  PacMan p = frame.addPacMan(new Location(2, 4));
+	  NoFrame f = new NoFrame();
+	  PacMan p = f.addPacMan(new Location(2, 4));
 
-	  assert(f.getLoc(new Location(2, 4)) != null);
-	  assert(f.getLoc(new Location(2, 4)).contains(Map.Type.PACMAN));
+	  assert(f.getMap().getLoc(new Location(2, 4)) != null);
+	  assert(f.getMap().getLoc(new Location(2, 4)).contains(Map.Type.PACMAN));
   }
 }
