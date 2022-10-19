@@ -37,7 +37,7 @@ public class PacMan {
     ArrayList<Location> locs = get_valid_moves();
     if (locs.size() > 0) {
 	    this.myLoc = locs.get(0);
-	    return false;
+	    return true;
     }
     return false;
   }
@@ -60,13 +60,10 @@ public class PacMan {
   }
 
   public JComponent consume() {
-    //return null;
-     
     if(myMap.getLoc(myLoc).contains(Map.Type.PACMAN) && myMap.getLoc(myLoc).contains(Map.Type.COOKIE)){
         return myMap.eatCookie("pacman");
     }else{
       return null;
     }
-    
   }
 }
