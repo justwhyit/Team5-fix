@@ -59,11 +59,9 @@ public class PacMan {
   }
 
   public JComponent consume() {
-    return null;
-    /* 
-    if(myMap.getLoc(myLoc).contains(PACMAN) && myMap.getLoc(myLoc).contains(COOKIE)){
+    if(myMap.getLoc(myLoc).contains(Map.Type.PACMAN) && myMap.getLoc(myLoc).contains(Map.Type.COOKIE)){
         return myMap.eatCookie("pacman");
     }
-    */
+    return null;
   }
 }

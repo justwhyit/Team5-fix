@@ -76,7 +76,7 @@ public class Map {
   public HashSet<Type> getLoc(Location loc) {
     if (field.containsKey(loc))
 	    return field.get(loc);
-    return null;
+    return wallSet;
   }
 
   public boolean attack(String Name) {
@@ -107,11 +107,15 @@ public class Map {
         return null;
     }
     //otherwise
+    Location pac_man_loc = locations.get(name);
+    String cookie_name = "tok_x" + pac_man_loc.x + "_y" + pac_man_loc.y;
+    JComponent eaten_cookie =  components.get(cookie_name);
     //decrement getCookies
-    cookies = cookies-1;
+    cookies = cookies+1;
     //removing cokkie from locations and field
     locations.remove(name);
+    components.remove(cookie_name);
     //otherwise we get JComponent and remove it
-    return null;
+    return eaten_cookie;
   }
 }
