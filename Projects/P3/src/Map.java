@@ -74,6 +74,7 @@ public class Map {
     }
   }
 
+
   public HashSet<Type> getLoc(Location loc) {
     if (field.containsKey(loc))
 	    return field.get(loc);

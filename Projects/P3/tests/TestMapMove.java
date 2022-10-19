@@ -18,8 +18,8 @@ public class TestMapMove extends TestCase {
       Location wallLoc = new Location(1, 0);
   
       if (pacman.myMap.getLoc(wallLoc).contains(Map.Type.WALL)) {
-        assertTrue(!pacman.myMap.move("Pacman", wallLoc, Map.Type.PACMAN));
-        assertTrue(pacman.myMap.move("Pacman", new Location(2,1), Map.Type.PACMAN));
+        assertTrue(!pacman.myMap.move("pacman", wallLoc, Map.Type.PACMAN));
+        assertTrue(pacman.myMap.move("pacman", new Location(2,1), Map.Type.PACMAN));
         assertTrue(!ghost.myMap.move("name", wallLoc, Map.Type.GHOST));
         assertTrue(ghost.myMap.move("name", new Location(2,1), Map.Type.PACMAN));
         assertTrue(ghost.myMap.move("name", new Location(3,1), Map.Type.PACMAN));
