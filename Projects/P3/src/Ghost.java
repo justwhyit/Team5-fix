@@ -27,7 +27,7 @@ public class Ghost {
       }
     }
 
-    return validMoves;
+    return validMoves; // Looks like this was already fixed
   }
 
   public boolean move() {

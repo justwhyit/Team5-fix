@@ -30,7 +30,7 @@ public class PacMan {
       }
     }
 
-    return validMoves;
+    return validMoves; // Looks like this was already fixed
   }
 
   public boolean move() {
