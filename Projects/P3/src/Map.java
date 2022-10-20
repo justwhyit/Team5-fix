@@ -58,20 +58,17 @@ public class Map {
 
     //should only be ever adjusting position for pacman and ghost so... 
     if (type == Type.PACMAN) {
-      if (!getLoc(loc).contains(Type.WALL)) { //can't update at all
-        component.setLocation(loc.x, loc.y);
-        return true;
-      } else {
+      if (getLoc(loc).contains(Type.WALL) || getLoc(loc).contains(Type.PACMAN)) {
         return false;
       }
     } else { //must be ghost?
-      if (!getLoc(loc).contains(Type.WALL)) { //can't set at wall
-        component.setLocation(loc.x, loc.y);
-        return true;
-      } else {
+      if (getLoc(loc).contains(Type.WALL)) {
         return false;
       }
     }
+    
+	component.setLocation(loc.x, loc.y);
+	return true;
   }
 
 
